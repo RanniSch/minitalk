@@ -6,7 +6,7 @@
 /*   By: rschlott <rschlott@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 05:14:30 by rschlott          #+#    #+#             */
-/*   Updated: 2022/11/21 06:04:23 by rschlott         ###   ########.fr       */
+/*   Updated: 2022/11/23 06:38:33 by rschlott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	ft_atoi(const char *str)
 	return (convert * sign);
 }
 
-/* counts length of a string */
+/* counts length of a string 
 int	ft_strlen(const char *s)
 {
 	int	count;
@@ -51,6 +51,13 @@ int	ft_strlen(const char *s)
 	while (*(s + count) != '\0')
 		count++;
 	return (count);
+}*/
+
+/* Outputs the character ’c’ to the given file
+descriptor. */
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
 }
 
 /* Outputs the string ’s’ to the given file
@@ -93,9 +100,21 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 }
 
-/* Outputs the character ’c’ to the given file
-descriptor. */
-void	ft_putchar_fd(char c, int fd)
+/* Outputs the string ’s’ to the given file descriptor
+followed by a newline. */
+void	ft_putendl_fd(char *s, int fd)
 {
+	int		i;
+	char	c;
+
+	i = 0;
+	while (*(s + i) != 0)
+	{
+		c = *(s + i);
+		write(fd, &c, 1);
+		i++;
+	}
+	c = c + 1;
+	c = '\n';
 	write(fd, &c, 1);
 }
