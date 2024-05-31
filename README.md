@@ -3,7 +3,7 @@ The purpose of this project is a small data exchange program using UNIX signals.
 The server is able to receive strings from several clients in a row without needing to restart.<br>
 Only these two signals are used: SIGUSR1 and SIGUSR2<br><br>
 
-## How to run minitalk
+## How to run
 * In your terminal run: ```make```
 * Start the server with ```./server```
 * Open a second terminal and start the client with ```./client [SERVER-PID] ["STRING"]```
